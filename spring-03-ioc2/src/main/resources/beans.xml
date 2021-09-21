@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--IOC容器创建对象的方式-->
+
+    <!--使用无参构造器，默认-->
+    <bean id="student" class="com.tzy.pojo.Student ">
+        <property name="name" value="mike"/>
+    </bean>
+
+    <!--使用有参构造器：构造函数参数类型匹配(Constructor argument type matching)-->
+    <!--使用有参构造器：构造函数参数索引(Constructor argument index)-->
+    <bean id="user" class="com.tzy.pojo.User ">
+        <constructor-arg index="0" value="tzy"/>
+    </bean>
+
+    <!--使用有参构造器：构造函数参数类型匹配(Constructor argument type matching)-->
+    <!--使用有参构造器：构造函数参数名称(Constructor argument name)，不建议使用-->
+    <bean id="user2" class="com.tzy.pojo.User ">
+        <constructor-arg type="java.lang.String" value="lipu"/>
+    </bean>
+
+    <!--使用有参构造器：构造函数参数解析(Constructor Argument Resolution)-->
+    <!--使用有参构造器：构造函数参数名称(Constructor argument name)，不建议使用-->
+    <bean id="user3" class="com.tzy.pojo.User ">
+        <constructor-arg name="name" value="likun"/>
+    </bean>
+</beans>
